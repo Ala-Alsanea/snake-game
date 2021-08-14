@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Snake Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='CSS/public/tailwind.css'>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            display: flex;
+            background: #000;
+        }
+        
+        #area {
+            display: grid;
+            grid-template-columns: repeat(30, 2fr);
+            grid-template-rows: repeat(30, 2fr);
+            width: 100vmin;
+            height: 90vmin;
+            background-color: rgb(255, 208, 0);
+            position: relative;
+            z-index: 9;
+        }
+        
+        .snake {
+            background-color: rgb(255, 208, 0);
+            border: .5vmin solid #000;
+            border-radius: 1vmin;
+        }
+        
+        .food {
+            background-color: black;
+            border: .5vmin solid #000;
+            border-radius: 50%;
+        }
+        
+        #scoreArea {
+            background-color: rgb(255, 208, 0);
+        }
+        
+        #alert {
+            width: 120vmin;
+            height: 50vmin;
+            background: rgb(14, 14, 14);
+            border-radius: 20px;
+        }
+        
+        #gameOver {
+            background: rgb(255, 208, 0);
+        }
+        
+        #btn {
+            background: rgb(255, 208, 0);
+            letter-spacing: 4px;
+            transition: 0.5s;
+        }
+        
+        #btn:hover {
+            background: rgb(207, 170, 1);
+            letter-spacing: 0px;
+            transition: 0.5s;
+        }
+        
+        #btn:active {
+            margin-top: 16vh;
+            transition: 0.5s;
+        }
+    </style>
+    <script src='JS/control.js' defer type="module"></script>
+</head>
+
+<body class=" ">
+
+
+    <div id="alert" class=" absolute z-10 hidden  ">
+        <p id="gameOver" class="center p-3  mt-10  text-3xl uppercase  text-center ">game over</p>
+        <p id="alertScore" class="center p-1  mt-6 mx-20 text-xl uppercase text-yellow-400  text-center">score : <span id="scoreSpan">0</span> </p>
+        <a id="btn" class="center p-1  rounded-xl mt-14 mx-56  text-xl uppercase text-center block  ">play again</a>
+    </div>
+
+    <div id="area" class="rounded-2xl "></div>
+    <div id="scoreArea" class=" absolute top-14 right-14 p-2 rounded-md ">
+        <p class="text-2xl   uppercase font-bold">score : <span id="score">0</span> </p>
+
+    </div>
+    <audio id="song2" src="ost/Game Over (8-Bit Music)(MP3_320K).mp3" preload="metadata" class="absolute right-6 bottom-8 w-30   p-1 border-4 border-yellow-600 rounded-3xl shadow-xl ">
+
+</body>
+
+
+</html>
