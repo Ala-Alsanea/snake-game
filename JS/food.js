@@ -1,8 +1,8 @@
 import { expandSnake, onSnake } from "./snake.js"
 
-let food = getRandomPos()
+export let food = getRandomPos()
 let expandRate = 3
-
+let foodElement
 
 
 
@@ -20,7 +20,7 @@ export function update() {
 
 export function draw(area) {
 
-    let foodElement = document.createElement('div')
+    foodElement = document.createElement('div')
     foodElement.style.gridRowStart = food.y
     foodElement.style.gridColumnStart = food.x
     foodElement.classList.add('food')
@@ -28,7 +28,7 @@ export function draw(area) {
 }
 
 
-function getRandomPos() {
+export function getRandomPos() {
     let newFoodPos
     while (newFoodPos == null || onSnake(newFoodPos)) {
         newFoodPos = {
@@ -38,4 +38,14 @@ function getRandomPos() {
     }
 
     return newFoodPos
+}
+
+
+export function reset() {
+
+    food = getRandomPos()
+    console.dir(food)
+
+
+
 }
