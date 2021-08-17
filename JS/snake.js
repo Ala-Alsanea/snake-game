@@ -9,7 +9,7 @@ export let scoreElement = document.getElementById("score")
 export let inputDir
 
 
-// #####################################
+
 export function update() {
 
     addSeg()
@@ -23,7 +23,7 @@ export function update() {
     snakeBody[0].y += inputDir.y
 
 }
-// ###############################
+
 
 export function draw(area) {
     snakeBody.forEach(seg => {
@@ -36,19 +36,13 @@ export function draw(area) {
 
     })
 
-
-
-
-
 }
 
 
+// #############################################################################################
+
 export function expandSnake(num) {
     newSeg += num
-        // console.log(newSeg)
-
-    // console.log(score)
-
 }
 
 export function onSnake(pos, { ignoreHead = false } = {}) {
@@ -58,6 +52,7 @@ export function onSnake(pos, { ignoreHead = false } = {}) {
         return equalPos(seg, pos)
     })
 }
+
 
 function equalPos(pos1, pos2) {
     return pos1.x === pos2.x && pos1.y === pos2.y

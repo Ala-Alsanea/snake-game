@@ -16,8 +16,6 @@ export function update() {
 }
 
 
-// ###############################
-
 export function draw(area) {
 
     foodElement = document.createElement('div')
@@ -27,6 +25,8 @@ export function draw(area) {
     area.appendChild(foodElement)
 }
 
+
+// #############################################################################################
 
 export function getRandomPos() {
     let newFoodPos

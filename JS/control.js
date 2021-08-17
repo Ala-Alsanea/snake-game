@@ -1,4 +1,4 @@
-import { update as updateSnake, draw as drawSnake, snakeSpeed, snakeOnSnake, getSnakeHead, outOfArea, onSnake, scoreElement, reset as snakeReset, snakeElement, inputDir } from './snake.js'
+import { update as updateSnake, draw as drawSnake, snakeSpeed, snakeOnSnake, getSnakeHead, outOfArea, scoreElement, reset as snakeReset } from './snake.js'
 import { update as updateFood, draw as drawFood, reset as foodReset } from './food.js'
 import { reset as inputReset } from './input.js'
 
@@ -17,25 +17,20 @@ function main(rightNow) {
 
 
     if (gameOver) {
-        // window.alert('u losssse')
-        // window.location = '/'
+
+
         alert.classList.remove("hidden")
         scoreSpan.innerHTML = scoreElement.innerHTML
         inputReset()
-        snakeReset()
-
         song2.play()
 
-
-        // inputDir = { x: 0, y: 0 }
         btn.onclick = function() {
-            // window.location = '/'
-            reset()
 
+            reset()
 
         }
 
-        // gameOver = false
+
         // return
     }
 
@@ -46,7 +41,7 @@ function main(rightNow) {
     if (secSinceLastRend < 1 / snakeSpeed) return
 
     lastRend = rightNow
-        // console.log("run")
+
 
     update()
     draw()
@@ -79,7 +74,7 @@ function reset() {
     gameOver = false
     alert.classList.add("hidden")
     foodReset()
-
+    snakeReset()
 
 
 
