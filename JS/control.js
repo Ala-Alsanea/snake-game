@@ -71,6 +71,7 @@ function checkDeath() {
 
 function reset() {
     song2.pause()
+    song2.currentTime = 0
     gameOver = false
     alert.classList.add("hidden")
     foodReset()
