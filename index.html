@@ -25,6 +25,7 @@
 <body class=" ">
 
 
+
     <div id="alert" class=" absolute z-10  hidden  w-full h-full ">
         <p id="gameOver" class="center p-3  mt-10  text-4xl uppercase  text-center ">game over</p>
         <p id="alertScore" class="center p-1  mt-20 mx-20 text-2xl uppercase text-yellow-400  text-center">score : <span id="scoreSpan">0</span> </p>
@@ -34,14 +35,16 @@
 
         <div id="level-div" class="  flex flex-wrap p-2 mt-14 mx-auto space-x-3     ">
 
-            <a id="easy" class="btn level-btn   uppercase">easy</a>
-            <a id="normal" class="btn level-btn   uppercase">normal</a>
-            <a id="hard" class="btn level-btn   uppercase">hard</a>
-            <a id="very-hard" class="btn level-btn   uppercase">very hard</a>
+
+            <div id="level-div" class="border-2  ">
+                <a id="easy" class="btn level-btn   uppercase">easy</a>
+                <a id="normal" class="btn level-btn   uppercase">normal</a>
+                <a id="hard" class="btn level-btn   uppercase">hard</a>
+                <a id="very-hard" class="btn level-btn   uppercase">very hard</a>
+            </div>
         </div>
+
     </div>
-
-
 
 
     <div id="area" class="rounded-2xl "></div>
