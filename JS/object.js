@@ -8,7 +8,8 @@ export let objNum = 7
 export function update() {
 
     addObj(objNum)
-
+    if (objectOnObject())
+        getObjPos()
 
 
 
@@ -45,6 +46,20 @@ export function snakeOnObject() {
 
 }
 
+export function objectOnObject() {
+
+    for (let i = 0; i < object.length; i++) {
+        for (let j = 0; j < i; j++) {
+
+            if (equalPos(object[i], object[j])) {
+                // console.log("yeee")
+                return true
+            }
+        }
+    }
+
+
+}
 
 function addObj(num) {
 

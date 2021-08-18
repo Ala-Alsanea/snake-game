@@ -9,15 +9,7 @@
     <link rel='stylesheet' href='CSS/src/style.css'>
     <link rel='stylesheet' href='CSS/public/tailwind.css'>
     <style>
-        #level-div {
-            width: 450px;
-        }
-        
-        .level-btn {
-            /* margin: 0px 3px; */
-            border-radius: 6px;
-            padding: 2px 20px;
-        }
+
     </style>
     <script src='JS/control.js' defer type="module"></script>
 </head>
@@ -26,22 +18,20 @@
 
 
 
-    <div id="alert" class=" absolute z-10  hidden  w-full h-full ">
+    <div id="alert" class=" absolute z-10  hidden   w-full h-full ">
         <p id="gameOver" class="center p-3  mt-10  text-4xl uppercase  text-center ">game over</p>
         <p id="alertScore" class="center p-1  mt-20 mx-20 text-2xl uppercase text-yellow-400  text-center">score : <span id="scoreSpan">0</span> </p>
         <p class="center p-1  mt-6 mx-20 text-2xl uppercase text-yellow-400  text-center "> level : <span id="levelLabel-2">EASY</span> </p>
 
         <a id="btn" class="btn  mt-20 block text-center py-1 rounded-3xl w-40 text-xl mx-auto ">play again</a>
 
-        <div id="level-div" class="  flex flex-wrap p-2 mt-14 mx-auto space-x-3     ">
 
 
-            <div id="level-div" class="border-2  ">
-                <a id="easy" class="btn level-btn   uppercase">easy</a>
-                <a id="normal" class="btn level-btn   uppercase">normal</a>
-                <a id="hard" class="btn level-btn   uppercase">hard</a>
-                <a id="very-hard" class="btn level-btn   uppercase">very hard</a>
-            </div>
+        <div id="level-div" class="  flex flex-wrap p-2 mt-14 mx-auto space-x-8     ">
+            <a id="easy" class="btn level-btn   uppercase">easy</a>
+            <a id="normal" class="btn level-btn   uppercase">normal</a>
+            <a id="hard" class="btn level-btn   uppercase">hard</a>
+            <a id="very-hard" class="btn level-btn   uppercase">very hard</a>
         </div>
 
     </div>

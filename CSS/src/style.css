@@ -66,7 +66,17 @@ body {
     transition: 0.5s;
 }
 
-#btn:active {
-    margin-top: 16vh;
+#level-div {
+    width: 600px;
+}
+
+.level-btn {
+    /* margin: 0px 3px; */
+    border-radius: 6px;
+    padding: 2px 20px;
+}
+
+.level-btn:hover {
+    background: rgb(207, 170, 1);
     transition: 0.5s;
 }
