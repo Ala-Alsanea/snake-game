@@ -2,7 +2,7 @@
 
 import { change as snakeChange } from "./snake.js"
 import { change as objectChange } from "./object.js"
-
+import { reset } from './control.js';
 
 let easy = document.getElementById('easy')
 let normal = document.getElementById('normal')
@@ -19,6 +19,7 @@ export function checkLevel() {
         objectChange(easy)
         levelLabel.innerHTML = easy.innerHTML
         levelLabel_2.innerHTML = easy.innerHTML
+        reset()
     }
 
     normal.onclick = function() {
@@ -26,7 +27,7 @@ export function checkLevel() {
         objectChange(normal)
         levelLabel.innerHTML = normal.innerHTML
         levelLabel_2.innerHTML = normal.innerHTML
-
+        reset()
     }
 
     hard.onclick = function() {
@@ -34,7 +35,7 @@ export function checkLevel() {
         objectChange(hard)
         levelLabel.innerHTML = hard.innerHTML
         levelLabel_2.innerHTML = hard.innerHTML
-
+        reset()
     }
 
     very_hard.onclick = function() {
@@ -42,7 +43,7 @@ export function checkLevel() {
         objectChange(very_hard)
         levelLabel.innerHTML = very_hard.innerHTML
         levelLabel_2.innerHTML = very_hard.innerHTML
-
+        reset()
     }
 
 
