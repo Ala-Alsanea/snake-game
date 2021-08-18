@@ -1,8 +1,9 @@
-import { expandSnake, onSnake } from "./snake.js"
+import { expandSnake, onSnake, expandRate } from "./snake.js"
+import { getObjPos, onObject } from './object.js'
 
-let food = getRandomPos()
-let expandRate = 3
+export let food = getRandomPos()
 
+let foodElement
 
 
 
@@ -10,17 +11,18 @@ export function update() {
     if (onSnake(food)) {
         expandSnake(expandRate)
         food = getRandomPos()
+        getObjPos()
     }
-
+    if (onObject(food)) {
+        getObjPos()
+    }
 
 }
 
 
-// ###############################
-
 export function draw(area) {
 
-    let foodElement = document.createElement('div')
+    foodElement = document.createElement('div')
     foodElement.style.gridRowStart = food.y
     foodElement.style.gridColumnStart = food.x
     foodElement.classList.add('food')
@@ -28,14 +30,26 @@ export function draw(area) {
 }
 
 
-function getRandomPos() {
-    let newFoodPos
-    while (newFoodPos == null || onSnake(newFoodPos)) {
-        newFoodPos = {
+// #############################################################################################
+
+export function getRandomPos() {
+    let newPos
+    while (newPos == null || onSnake(newPos)) {
+        newPos = {
             x: Math.floor(Math.random() * 30) + 1,
             y: Math.floor(Math.random() * 30) + 1
         }
     }
 
-    return newFoodPos
+    return newPos
+}
+
+
+export function reset() {
+
+    food = getRandomPos()
+
+
+
+
 }

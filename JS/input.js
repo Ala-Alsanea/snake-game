@@ -31,3 +31,12 @@ export function getInputDir() {
     lastInput = inputDir
     return inputDir
 }
+
+export function reset() {
+
+    inputDir = { x: 0, y: 0 }
+    lastInput = { x: 0, y: 0 }
+
+
+
+}

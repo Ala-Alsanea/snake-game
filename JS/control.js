@@ -1,5 +1,9 @@
-import { update as updateSnake, draw as drawSnake, snakeSpeed, snakeOnSnake, getSnakeHead, outOfArea, onSnake, scoreElement } from './snake.js'
-import { update as updateFood, draw as drawFood } from './food.js'
+import { update as updateSnake, draw as drawSnake, snakeSpeed, snakeOnSnake, getSnakeHead, outOfArea, scoreElement, reset as snakeReset } from './snake.js'
+import { update as updateFood, draw as drawFood, reset as foodReset } from './food.js'
+import { reset as inputReset } from './input.js'
+import { update as updateObject, draw as drawObject, reset as objectReset, snakeOnObject } from './object.js'
+import { checkLevel } from './level.js'
+
 
 
 let lastRend = 0
@@ -13,17 +17,24 @@ let song2 = document.getElementById("song2")
 
 
 function main(rightNow) {
+
+
     if (gameOver) {
-        // window.alert('u losssse')
-        // window.location = '/'
+
+
         alert.classList.remove("hidden")
         scoreSpan.innerHTML = scoreElement.innerHTML
-
+        inputReset()
         song2.play()
+
         btn.onclick = function() {
-            window.location = '/'
+
+            reset()
+
         }
-        return
+
+
+        // return
     }
 
 
@@ -33,7 +44,7 @@ function main(rightNow) {
     if (secSinceLastRend < 1 / snakeSpeed) return
 
     lastRend = rightNow
-        // console.log("run")
+
 
     update()
     draw()
@@ -45,7 +56,9 @@ window.requestAnimationFrame(main)
 function update() {
     updateSnake()
     updateFood()
+    updateObject()
     checkDeath()
+    checkLevel()
 
 }
 
@@ -53,9 +66,22 @@ function draw() {
     area.innerHTML = ''
     drawSnake(area)
     drawFood(area)
+    drawObject(area)
 }
 
 
 function checkDeath() {
-    gameOver = outOfArea(getSnakeHead()) || snakeOnSnake()
+    gameOver = outOfArea(getSnakeHead()) || snakeOnSnake() || snakeOnObject()
+}
+
+
+export function reset() {
+    song2.pause()
+    song2.currentTime = 0
+    gameOver = false
+    alert.classList.add("hidden")
+    foodReset()
+    snakeReset()
+    objectReset()
+
 }
