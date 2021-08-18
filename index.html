@@ -11,7 +11,13 @@
     <style>
         .level-div {}
         
-        .level-btn {}
+        .level-btn {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+            align-self: center;
+        }
     </style>
     <script src='JS/control.js' defer type="module"></script>
 </head>
@@ -19,14 +25,15 @@
 <body class=" ">
 
 
-    <div id="alert" class=" absolute z-10  w-full h-full ">
+    <div id="alert" class=" absolute z-10   w-full h-full ">
         <p id="gameOver" class="center p-3  mt-10  text-3xl uppercase  text-center ">game over</p>
         <p id="alertScore" class="center p-1  mt-6 mx-20 text-xl uppercase text-yellow-400  text-center">score : <span id="scoreSpan">0</span> </p>
-        <p class="center p-1  mt-6 mx-20 text-xl uppercase text-yellow-400  text-center"> level : <span id="levelLabel-2">EASY</span> </p>
+        <p class="center p-1  mt-6 mx-20 text-xl uppercase text-yellow-400  text-center "> level : <span id="levelLabel-2">EASY</span> </p>
 
-        <a id="btn" class="btn  ">play again</a>
+        <a id="btn" class="btn  mt-40 block text-center py-1 rounded w-40 text-xl mx-auto ">play again</a>
 
-        <div id="level-div" class="border-2  ">
+        <div id="level-div" class="border-2 mt-9 h-auto p-10   ">
+
             <a id="easy" class="btn level-btn   uppercase">easy</a>
             <a id="normal" class="btn level-btn   uppercase">normal</a>
             <a id="hard" class="btn level-btn   uppercase">hard</a>

@@ -37,7 +37,7 @@ export function snakeOnObject() {
 
     for (let i = 0; i < object.length; i++) {
         if (equalPos(object[i], getSnakeHead())) {
-            // console.log("yeee")
+
             return true
         }
     }
