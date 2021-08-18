@@ -77,6 +77,4 @@ function reset() {
     foodReset()
     snakeReset()
 
-
-
 }
