@@ -1,0 +1,72 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    background: #000;
+}
+
+#area {
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+    width: 100vmin;
+    height: 90vmin;
+    background-color: rgb(255, 208, 0);
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+}
+
+.snake {
+    background-color: rgb(255, 208, 0);
+    border: .5vmin solid #000;
+    border-radius: 1vmin;
+}
+
+.food {
+    background-color: black;
+    border: .5vmin solid #000;
+    border-radius: 50%;
+}
+
+.object {
+    background-color: rgb(255, 0, 0);
+    border: .5vmin solid rgb(255, 0, 0);
+}
+
+#scoreArea {
+    background-color: rgb(255, 208, 0);
+}
+
+#alert {
+    /* width: 120vmin;
+    height: 50vmin; */
+    background: rgb(14, 14, 14);
+    border-radius: 20px;
+    transition: 1s;
+}
+
+#gameOver {
+    background: rgb(255, 208, 0);
+}
+
+.btn {
+    background: rgb(255, 208, 0);
+    letter-spacing: 4px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background: rgb(207, 170, 1);
+    letter-spacing: 0px;
+    transition: 0.5s;
+}
+
+#btn:active {
+    margin-top: 16vh;
+    transition: 0.5s;
+}

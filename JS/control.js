@@ -1,6 +1,9 @@
 import { update as updateSnake, draw as drawSnake, snakeSpeed, snakeOnSnake, getSnakeHead, outOfArea, scoreElement, reset as snakeReset } from './snake.js'
 import { update as updateFood, draw as drawFood, reset as foodReset } from './food.js'
 import { reset as inputReset } from './input.js'
+import { update as updateObject, draw as drawObject, reset as objectReset, snakeOnObject } from './object.js'
+import { checkLevel } from './level.js'
+
 
 
 let lastRend = 0
@@ -53,7 +56,9 @@ window.requestAnimationFrame(main)
 function update() {
     updateSnake()
     updateFood()
+    updateObject()
     checkDeath()
+    checkLevel()
 
 }
 
@@ -61,11 +66,12 @@ function draw() {
     area.innerHTML = ''
     drawSnake(area)
     drawFood(area)
+    drawObject(area)
 }
 
 
 function checkDeath() {
-    gameOver = outOfArea(getSnakeHead()) || snakeOnSnake()
+    gameOver = outOfArea(getSnakeHead()) || snakeOnSnake() || snakeOnObject()
 }
 
 
@@ -76,5 +82,6 @@ function reset() {
     alert.classList.add("hidden")
     foodReset()
     snakeReset()
+    objectReset()
 
 }

@@ -1,7 +1,8 @@
-import { expandSnake, onSnake } from "./snake.js"
+import { expandSnake, onSnake, expandRate } from "./snake.js"
+import { getObjPos, onObject } from './object.js'
 
 export let food = getRandomPos()
-let expandRate = 3
+
 let foodElement
 
 
@@ -10,8 +11,11 @@ export function update() {
     if (onSnake(food)) {
         expandSnake(expandRate)
         food = getRandomPos()
+        getObjPos()
     }
-
+    if (onObject(food)) {
+        getObjPos()
+    }
 
 }
 
@@ -29,22 +33,22 @@ export function draw(area) {
 // #############################################################################################
 
 export function getRandomPos() {
-    let newFoodPos
-    while (newFoodPos == null || onSnake(newFoodPos)) {
-        newFoodPos = {
+    let newPos
+    while (newPos == null || onSnake(newPos)) {
+        newPos = {
             x: Math.floor(Math.random() * 30) + 1,
             y: Math.floor(Math.random() * 30) + 1
         }
     }
 
-    return newFoodPos
+    return newPos
 }
 
 
 export function reset() {
 
     food = getRandomPos()
-    console.dir(food)
+
 
 
 
